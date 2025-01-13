@@ -1,0 +1,257 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <title>E-Cell Selection Results</title>\r\n  <link rel=\"stylesheet\" href=\"style.css\">\r\n</head>\r\n<body>\r\n<div class=\"container\">\r\n  <!-- Login Section -->\r\n  <div id=\"login-section\" class=\"screen active\">\r\n    <div class=\"card\">\r\n      <h1>Welcome to E-Cell Selection Portal</h1>\r\n      <form id=\"loginForm\">\r\n        <input type=\"text\" id=\"username\" placeholder=\"Enter your username\" class=\"input-box\" required>\r\n        <button type=\"submit\" class=\"btn primary-btn\">Login</button>\r\n      </form>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- UID Section -->\r\n  <div id=\"uid-section\" class=\"screen\">\r\n    <div class=\"card\">\r\n      <h2>Check Your Selection Status</h2>\r\n      <input type=\"text\" id=\"uid\" placeholder=\"Enter your UID\" class=\"input-box\" required>\r\n      <button id=\"checkUid\" class=\"btn primary-btn\">Check Result</button>\r\n    </div>\r\n  </div>\r\n\r\n  <!-- Result Section -->\r\n  <div id=\"result-section\" class=\"screen\">\r\n    <div class=\"card\">\r\n      <h2>Selection Result</h2>\r\n      <p id=\"resultMessage\"></p>\r\n      <button onclick=\"location.reload()\" class=\"btn secondary-btn\">Start Over</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<script src=\"index.js\"></script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 70759b298d89220adb169fc99a2479d95bcf8c22)
++++ b/index.html	(date 1736787382342)
+@@ -7,8 +7,20 @@
+   <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
++
++<nav>
++  <div class="logo">
++    <img src="ecell.jpg" alt="E-Cell Logo">
++  </div>
++  <div class="title">
++    <h2>E-Cell Selection Results</h2>
++  </div>
++  <div class="user">
++    <a href="https://www.ecellsgsits.com/">E-Cell</a>
++  </div>
++</nav>
++
+ <div class="container">
+-  <!-- Login Section -->
+   <div id="login-section" class="screen active">
+     <div class="card">
+       <h1>Welcome to E-Cell Selection Portal</h1>
+@@ -19,7 +31,6 @@
+     </div>
+   </div>
+ 
+-  <!-- UID Section -->
+   <div id="uid-section" class="screen">
+     <div class="card">
+       <h2>Check Your Selection Status</h2>
+@@ -28,7 +39,6 @@
+     </div>
+   </div>
+ 
+-  <!-- Result Section -->
+   <div id="result-section" class="screen">
+     <div class="card">
+       <h2>Selection Result</h2>
+@@ -40,4 +50,4 @@
+ 
+ <script src="index.js"></script>
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+Index: style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>:root {\r\n    --primary-color: #007bff; /* Blue */\r\n    --secondary-color: #28a745; /* Green */\r\n    --error-color: #dc3545; /* Red */\r\n    --text-color: #333;\r\n    --background-color: #f9f9f9;\r\n    --card-bg-color: #fff;\r\n    --border-radius: 10px;\r\n    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\nbody {\r\n    font-family: 'Arial', sans-serif;\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    min-height: 100vh;\r\n    background-color: var(--background-color);\r\n}\r\n\r\n.container {\r\n    max-width: 400px;\r\n    width: 100%;\r\n    padding: 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.screen {\r\n    display: none;\r\n    width: 100%;\r\n}\r\n\r\n.screen.active {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.card {\r\n    width: 100%;\r\n    padding: 20px;\r\n    border-radius: var(--border-radius);\r\n    box-shadow: var(--box-shadow);\r\n    background-color: var(--card-bg-color);\r\n    text-align: center;\r\n}\r\n\r\nh1, h2 {\r\n    margin: 10px 0;\r\n    color: var(--text-color);\r\n}\r\n\r\np {\r\n    margin: 10px 0;\r\n    color: var(--text-color);\r\n}\r\n\r\n.input-box {\r\n    width: 100%;\r\n    padding: 10px;\r\n    margin: 10px 0;\r\n    border: 1px solid #ccc;\r\n    border-radius: var(--border-radius);\r\n    font-size: 16px;\r\n}\r\n\r\n.btn {\r\n    display: inline-block;\r\n    padding: 10px 20px;\r\n    margin: 10px 0;\r\n    border: none;\r\n    border-radius: var(--border-radius);\r\n    cursor: pointer;\r\n    font-size: 16px;\r\n    color: #fff;\r\n    text-align: center;\r\n}\r\n\r\n.primary-btn {\r\n    background-color: var(--primary-color);\r\n}\r\n\r\n.secondary-btn {\r\n    background-color: var(--secondary-color);\r\n}\r\n\r\n.btn:hover {\r\n    opacity: 0.9;\r\n}\r\n\r\n#result-message.success {\r\n    color: var(--secondary-color);\r\n}\r\n\r\n#result-message.error {\r\n    color: var(--error-color);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/style.css b/style.css
+--- a/style.css	(revision 70759b298d89220adb169fc99a2479d95bcf8c22)
++++ b/style.css	(date 1736787176176)
+@@ -3,35 +3,75 @@
+     --secondary-color: #28a745; /* Green */
+     --error-color: #dc3545; /* Red */
+     --text-color: #333;
+-    --background-color: #f9f9f9;
++    --background-color: #f0f0f0;
+     --card-bg-color: #fff;
+     --border-radius: 10px;
+     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
+ body {
+-    font-family: 'Arial', sans-serif;
++    font-family: sans-serif;
+     margin: 0;
+     padding: 0;
+     display: flex;
+-    justify-content: center;
+-    align-items: center;
++    flex-direction: column;
+     min-height: 100vh;
+     background-color: var(--background-color);
+ }
+ 
++nav {
++    background-color: var(--secondary-color); /* Green */
++    color: #fff;
++    padding: 1rem 2rem;
++    display: flex;
++    align-items: center;
++    justify-content: space-between; /* Align logo and user icon */
++    position: relative;
++}
++
++.logo {
++    display: flex;
++    align-items: center;
++}
++
++.logo img {
++    width: 30px;
++    height: 30px;
++    margin-right: 5px;
++}
++
++.title {
++    font-size: 1.2rem;
++    flex-grow: 1; /* Make title take up available space */
++    text-align: center;
++}
++
++.user {
++    display: flex;
++    align-items: center;
++}
++
++.user-icon {
++    font-size: 1.5rem;
++    color: #fff; /* White user icon */
++}
++
+ .container {
+-    max-width: 400px;
+-    width: 100%;
+-    padding: 20px;
++    flex: 1;
+     display: flex;
+-    flex-direction: column;
++    justify-content: center;
+     align-items: center;
+ }
+ 
+ .screen {
+     display: none;
+     width: 100%;
++    max-width: 400px; /* Limit screen width */
++    padding: 30px;
++    border-radius: var(--border-radius);
++    box-shadow: var(--box-shadow);
++    background-color: var(--card-bg-color);
++    text-align: center;
+ }
+ 
+ .screen.active {
+@@ -40,15 +80,6 @@
+     align-items: center;
+ }
+ 
+-.card {
+-    width: 100%;
+-    padding: 20px;
+-    border-radius: var(--border-radius);
+-    box-shadow: var(--box-shadow);
+-    background-color: var(--card-bg-color);
+-    text-align: center;
+-}
+-
+ h1, h2 {
+     margin: 10px 0;
+     color: var(--text-color);
+@@ -99,3 +130,6 @@
+ #result-message.error {
+     color: var(--error-color);
+ }
++#username-display {
++    margin-left: 5px;
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"66629989-d85f-45e7-94ce-2daed3f4b925\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/../E-cell-Selection-Page/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/index.html\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/index.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/package.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/selected_uids.csv\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/style.css\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/murtaza-sadri-19/E-cell-Selection-Page.git\",\r\n    \"accountId\": \"a755dd65-15e1-4ad2-abfb-62193416439a\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 4\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2rZdYMiCjr289CS9RxvXOJqTlsR\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"66629989-d85f-45e7-94ce-2daed3f4b925\" name=\"Changes\" comment=\"\" />\r\n      <created>1736770578086</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1736770578086</updated>\r\n      <workItem from=\"1736770579216\" duration=\"662000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 70759b298d89220adb169fc99a2479d95bcf8c22)
++++ b/.idea/workspace.xml	(date 1736787309015)
+@@ -5,12 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="66629989-d85f-45e7-94ce-2daed3f4b925" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/../E-cell-Selection-Page/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/selected_uids.csv" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/ecell.jpg" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,15 +25,21 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/murtaza-sadri-19/E-cell-Selection-Page.git",
+-    "accountId": "a755dd65-15e1-4ad2-abfb-62193416439a"
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "murtaza-sadri-19"
+   }
+ }]]></component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 4
+-}]]></component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/murtaza-sadri-19/E-cell-Selection-Page.git&quot;,
++    &quot;accountId&quot;: &quot;a755dd65-15e1-4ad2-abfb-62193416439a&quot;
++  }
++}</component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 4
++}</component>
+   <component name="ProjectId" id="2rZdYMiCjr289CS9RxvXOJqTlsR" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+@@ -48,6 +52,8 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.git.unshallow": "true",
+     "git-widget-placeholder": "main",
++    "ignore.virus.scanning.warn.message": "true",
++    "last_opened_file_path": "E:/E-cell-Selection-Page",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+@@ -56,6 +62,11 @@
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
++  <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="E:\E-cell-Selection-Page" />
++    </key>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -72,6 +83,7 @@
+       <option name="presentableId" value="Default" />
+       <updated>1736770578086</updated>
+       <workItem from="1736770579216" duration="662000" />
++      <workItem from="1736785978933" duration="1319000" />
+     </task>
+     <servers />
+   </component>
