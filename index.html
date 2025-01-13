@@ -7,8 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  <h1>Selection Status Check</h1>
+
+<nav>
+  <div class="logo">
+    <a href="#">Selection Status</a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="profile">
+    <img src="profile.png" alt="Profile Picture" class="profile-image" id="profileImage">
+    <a href="#" onclick="showAccountDetails()">Account</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+</nav>
+
+<main class="main-container">
   <div id="login-section">
     <h2>Login</h2>
     <form id="loginForm">
@@ -27,7 +43,30 @@
   <div id="result-section" style="display: none;">
     <h2 id="resultMessage"></h2>
   </div>
-</div>
+
+  <div id="account-section" style="display: none;">
+    <h2>Account Details</h2>
+    <div>
+      <label for="username">Username:</label>
+      <span id="usernameDisplay"></span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <span id="emailDisplay"></span>
+    </div>
+    <div>
+      <button onclick="checkNotifications()">Check Notifications</button>
+    </div>
+    <div>
+      <label for="profileImage">Profile Image:</label>
+      <input type="file" id="profileImageInput" accept="image/*">
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2024 Your Organization. All rights reserved.</p>
+</footer>
 
 <script src="index.js"></script>
 </body>
