@@ -3,50 +3,81 @@
     --secondary-color: #28a745; /* Green */
     --error-color: #dc3545; /* Red */
     --text-color: #333;
-    --background-color: #f9f9f9;
+    --background-color: #f0f0f0;
     --card-bg-color: #fff;
     --border-radius: 10px;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     background-color: var(--background-color);
 }
 
-.container {
-    max-width: 400px;
-    width: 100%;
-    padding: 20px;
+nav {
+    background-color: var(--secondary-color); /* Green */
+    color: #fff;
+    padding: 1rem 2rem;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Align logo and user icon */
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+.title {
+    font-size: 1.2rem;
+    flex-grow: 1; /* Make title take up available space */
+    text-align: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user-icon {
+    font-size: 1.5rem;
+    color: #fff; /* White user icon */
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .screen {
     display: none;
     width: 100%;
+    max-width: 400px; /* Limit screen width */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--card-bg-color);
+    text-align: center;
 }
 
 .screen.active {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.card {
-    width: 100%;
-    padding: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    background-color: var(--card-bg-color);
-    text-align: center;
 }
 
 h1, h2 {
@@ -98,4 +129,7 @@ p {
 
 #result-message.error {
     color: var(--error-color);
+}
+#username-display {
+    margin-left: 5px;
 }
