@@ -1,101 +1,101 @@
-/* style.css */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --error-color: #dc3545; /* Red */
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --card-bg-color: #fff;
+    --border-radius: 10px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+    align-items: center;
 }
 
-nav {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
+.screen {
+    display: none;
     width: 100%;
-    z-index: 999;
 }
 
-.logo {
-    font-size: 1.2rem;
-}
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.screen.active {
     display: flex;
-}
-
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.profile {
-    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.profile-image {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.main-container {
-    flex: 1; /* Allow main content to grow to fill remaining space */
-    max-width: 400px;
-    margin: 80px auto 20px; /* Adjust top margin to account for navbar height */
-    padding: 40px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.card {
+    width: 100%;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--card-bg-color);
     text-align: center;
 }
 
-#login-section, #uid-section, #result-section, #account-section {
-    margin-bottom: 20px;
+h1, h2 {
+    margin: 10px 0;
+    color: var(--text-color);
 }
 
-#account-section {
-    text-align: left;
+p {
+    margin: 10px 0;
+    color: var(--text-color);
 }
 
-#account-section label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#account-section span {
-    margin-left: 10px;
-}
-
-#profileImageInput {
-    margin-top: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
+.input-box {
+    width: 100%;
     padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+.primary-btn {
+    background-color: var(--primary-color);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+#result-message.success {
+    color: var(--secondary-color);
+}
+
+#result-message.error {
+    color: var(--error-color);
 }
