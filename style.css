@@ -1,31 +1,29 @@
 :root {
-    --primary-color: #007bff; /* Blue */
-    --secondary-color: #28a745; /* Green */
-    --error-color: #dc3545; /* Red */
-    --text-color: #333;
-    --background-color: #f0f0f0;
-    --card-bg-color: #fff;
+    --primary-color: #ff3b3f; /* Red */
+    --secondary-color: #000; /* Black */
+    --text-color: #fff; /* White */
+    --background-color: #1a1a1a; /* Dark background */
+    --card-bg-color: #333; /* Card background */
+    --accent-color: #ffc1c1; /* Light red accent */
     --border-radius: 10px;
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    color: var(--text-color);
     background-color: var(--background-color);
 }
 
 nav {
-    background-color: var(--secondary-color); /* Green */
-    color: #fff;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align logo and user icon */
+    justify-content: space-between;
     position: relative;
 }
 
@@ -35,38 +33,28 @@ nav {
 }
 
 .logo img {
-    width: 30px;
-    height: 30px;
-    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .title {
-    font-size: 1.2rem;
-    flex-grow: 1; /* Make title take up available space */
+    font-size: 1.5rem;
     text-align: center;
 }
 
-.user {
-    display: flex;
-    align-items: center;
-}
-
-.user-icon {
-    font-size: 1.5rem;
-    color: #fff; /* White user icon */
-}
-
 .container {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
 }
 
 .screen {
     display: none;
     width: 100%;
-    max-width: 400px; /* Limit screen width */
+    max-width: 400px;
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
@@ -75,61 +63,75 @@ nav {
 }
 
 .screen.active {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block; /* Only show the active section */
 }
 
 h1, h2 {
-    margin: 10px 0;
-    color: var(--text-color);
+    margin: 20px 0;
 }
 
 p {
-    margin: 10px 0;
-    color: var(--text-color);
+    margin: 15px 0;
 }
 
 .input-box {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+    margin: 15px 0;
+    border: none;
     border-radius: var(--border-radius);
     font-size: 16px;
+    background: var(--background-color);
+    color: var(--text-color);
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    margin: 10px 0;
+    margin: 15px 0;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
     font-size: 16px;
-    color: #fff;
-    text-align: center;
-}
-
-.primary-btn {
+    color: var(--text-color);
     background-color: var(--primary-color);
-}
-
-.secondary-btn {
-    background-color: var(--secondary-color);
+    text-transform: uppercase;
 }
 
 .btn:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
-#result-message.success {
-    color: var(--secondary-color);
+.accent-text {
+    color: var(--accent-color);
 }
 
-#result-message.error {
-    color: var(--error-color);
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-#username-display {
-    margin-left: 5px;
+
+.green-theme {
+    background-color: #d4edda; /* Light green background */
+    border: 2px solid #28a745; /* Green border */
+    color: #155724; /* Dark green text */
+}
+
+.red-theme {
+    background-color: #f8d7da; /* Light red background */
+    border: 2px solid #dc3545; /* Red border */
+    color: #721c24; /* Dark red text */
+}
+
+.success {
+    color: #28a745; /* Green text */
+}
+
+.error {
+    color: #dc3545; /* Red text */
 }
