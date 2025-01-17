@@ -38,11 +38,6 @@ nav {
     margin-right: 10px;
 }
 
-.title {
-    font-size: 1.5rem;
-    text-align: center;
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -60,6 +55,7 @@ nav {
     box-shadow: var(--box-shadow);
     background-color: var(--card-bg-color);
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 .screen.active {
@@ -83,12 +79,17 @@ p {
     font-size: 16px;
     background: var(--background-color);
     color: var(--text-color);
+    transition: background 0.3s ease;
+}
+
+.input-box:focus {
+    background: #444; /* Darker background on focus */
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    margin: 15px 0;
+    margin: 15px  0;
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -96,10 +97,12 @@ p {
     color: var(--text-color);
     background-color: var(--primary-color);
     text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-    opacity: 0.8;
+    background-color: #e63946; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 .accent-text {
